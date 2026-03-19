@@ -358,11 +358,12 @@ body > :not(.footer):last-child {
 /* 1. AGREGA ESTO: Es el que posiciona TODO el bloque a la derecha */
 .marcas-grid {
     position: absolute;
-    right: 20px;
+    right: 50px;
     top: 150px;       /* Ajusta este número para bajar o subir el bloque */
     display: flex;    /* Pone las columnas una al lado de otra */
     gap: 15px;        /* Espacio horizontal entre columnas */
     z-index: 100;
+    transform: translateY(-5%);
 }
 
 /* 2. CAMBIA ESTO: Deja tu .columna-marcas solo con esto */
@@ -392,13 +393,27 @@ body > :not(.footer):last-child {
     max-height: 100%;
     object-fit: contain;   /* Mantiene la forma del logo sin estirarlo */
 }
-
-
-
-
-    @media screen and (max-width: 500px ){
+/* Esto se activa solo en celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .marcas-grid {
+        position: relative; /* Deja de flotar a la derecha */
+        right: 0;           /* Se centra */
+        top: 20px;          /* Un poco de espacio respecto al video */
+        justify-content: center; /* Centra las dos columnas */
+        width: 100%;        /* Ocupa todo el ancho disponible */
+        margin-bottom: 40px; /* Espacio al final para que no pegue con el footer */
     }
 
+    .card-marca {
+        width: 65px;  /* Las hacemos un poquito más pequeñas para que quepan bien */
+        height: 65px;
+    }
+}
+
+
+/**/
+    @media screen and (max-width: 500px ){
+    }
 
 /* Ajuste de seguridad para que nada desaparezca */
 .publicidad, .videopublicidad {
