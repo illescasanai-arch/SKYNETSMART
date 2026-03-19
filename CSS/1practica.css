@@ -355,87 +355,60 @@ body > :not(.footer):last-child {
 }
 /*********************************************************************************************************************************************/
 
-/* 1. AGREGA ESTO: Es el que posiciona TODO el bloque a la derecha */
-.marcas-grid {
-    position: absolute;
-    left: 55%;
-    top: 150px;       /* Ajusta este número para bajar o subir el bloque */
-    display: flex;    /* Pone las columnas una al lado de otra */
-    gap: 15px;        /* Espacio horizontal entre columnas */
-    z-index: 100;
-    transform: translateY(-5%);
+/* 1. EL CONTENEDOR (Lo que envuelve todo) */
+.bloque-publicidad-inicio {
     display: flex;
-    gap: 12px;
-    z-index: 100;
+    flex-direction: row;      /* En laptop: uno al lado del otro */
+    justify-content: flex-start;  /* Centra el grupo en la pantalla */
+    align-items: center;      /* Alinea todo a la misma altura */
+    gap: 20px;                /* Espacio real entre los 3 bloques */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* 2. CAMBIA ESTO: Deja tu .columna-marcas solo con esto */
+/* 2. EL BLOQUE DE MARCAS (Sin "absolute", ahora es parte del flujo) */
+.marcas-grid {
+    display: flex;
+    flex-direction: row;      /* Pone las dos columnas de lado */
+    gap: 12px;
+    flex-shrink: 0;           /* Evita que se aplasten en pantallas medianas */
+}
+
 .columna-marcas {
     display: flex;
-    flex-direction: column; /* Las marcas se apilan verticalmente */
-    gap: 15px;              /* Espacio vertical entre cada marca */
+    flex-direction: column;   /* Apila HP, Asus, Genius... */
+    gap: 12px;
 }
 
-/* LA CLAVE: Aquí fijamos el tamaño de la tarjeta blanca */
+/* 3. LAS TARJETAS (Tamaño fijo para que no se deformen) */
 .card-marca {
     background-color: white;
-    width: 80px;           /* Ajusta este ancho si las quieres más grandes o pequeñas */
-    height: 80px;          /* Ajusta este alto igual que el ancho */
+    width: 70px;              /* Tamaño uniforme */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    padding: 8px;          /* Espacio para que el logo no toque los bordes */
-    overflow: hidden;      /* Corta cualquier cosa que se salga */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    overflow: hidden;
 }
 
-/* IMPORTANTE: Esto obliga a la imagen gigante a encogerse */
 .card-marca img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;   /* Mantiene la forma del logo sin estirarlo */
+    object-fit: contain;      /* Evita logos estirados */
 }
-/* Esto se activa solo en celulares (pantallas menores a 768px) */
-@media (max-width: 768px) {
+
+/* 4. MODO RESPONSIVO (Para que en celular no se vea todo amontonado) */
+@media (max-width: 1100px) {
+    .bloque-publicidad-inicio {
+        flex-direction: column; /* Slider arriba, Video centro, Marcas abajo */
+        gap: 30px;
+    }
+
     .marcas-grid {
-        position: relative; /* Deja de flotar a la derecha */
-        right: 0;           /* Se centra */
-        top: 20px;          /* Un poco de espacio respecto al video */
-        justify-content: center; /* Centra las dos columnas */
-        width: 100%;        /* Ocupa todo el ancho disponible */
-        margin-bottom: 40px; /* Espacio al final para que no pegue con el footer */
+        justify-content: center;
     }
-
-    .card-marca {
-        width: 65px;  /* Las hacemos un poquito más pequeñas para que quepan bien */
-        height: 65px;
-    }
-}
-
-
-/**/
-    @media screen and (max-width: 500px ){
-    }
-
-/* Ajuste de seguridad para que nada desaparezca */
-.publicidad, .videopublicidad {
-  flex-shrink: 0; 
-}
-
-/* Responsivo: Si la pantalla es pequeña (celular), pon el video abajo del carrusel */
-@media (max-width: 1000px) {
-  /* CAMBIO: Usamos el nombre correcto del contenedor */
-  .bloque-publicidad-inicio {
-    flex-direction: column !important; /* Fuerza a que sea una columna */
-    align-items: center !important;    /* Centra ambos elementos */
-    gap: 20px;
-  }
-
-  /* Ajustamos el ancho para que no se salgan de la pantalla del celular */
-  .publicidad, .videopublicidad {
-    width: 95% !important; 
-    height: auto !important;
-    margin: 0 auto;
-  }
 }
