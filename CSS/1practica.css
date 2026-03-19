@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Orbitron", sans-serif;
-  background-color:rgba(250, 248, 248, 0.945);
+  background-color:rgba(249, 246, 246, 0.959);
   padding-top: 0px; /* Espacio para el header fijo */
   min-height: 100svh;      /* ocupa toda la pantalla, mejora en móviles */
   display: flex;
@@ -355,53 +355,49 @@ body > :not(.footer):last-child {
 }
 /*********************************************************************************************************************************************/
 
-.contenedor {
-    width: 90%;
-    max-width: 100px; /* más pequeño que antes*/
-    margin: 10px 0; /* menos espacio arriba y abajo*/
-
-    .card {
-        background: white;
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); /* sombra más suave*/
-        border-radius: 6px;
-        overflow: hidden;
-
-        img {
-            width: 50%;
-            max-height: 90px; /* más pequeño*/
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .textos {
-            padding: 15px; /* reducido*/
-
-            h3 {
-                font-size: 5px; /* más pequeño*/
-                margin-bottom: 8px;
-            }
-
-            p {
-                font-size: 4px; /* más pequeño*/
-                margin-bottom: 8px;
-            }
-
-            a {
-                background: black;
-                color: white;
-                text-decoration: none;
-                display: inline-block;
-                padding: 4px 10px; /* menos padding*/
-                font-size: 8px; /* más pequeño*/
-                border-radius: 4px; /* más pequeño*/
-            }
-        }
-    }
+/* 1. AGREGA ESTO: Es el que posiciona TODO el bloque a la derecha */
+.marcas-grid {
+    position: absolute;
+    right: 20px;
+    top: 150px;       /* Ajusta este número para bajar o subir el bloque */
+    display: flex;    /* Pone las columnas una al lado de otra */
+    gap: 15px;        /* Espacio horizontal entre columnas */
+    z-index: 100;
 }
 
-        @media screen and (max-width: 500px ){
-        }
+/* 2. CAMBIA ESTO: Deja tu .columna-marcas solo con esto */
+.columna-marcas {
+    display: flex;
+    flex-direction: column; /* Las marcas se apilan verticalmente */
+    gap: 15px;              /* Espacio vertical entre cada marca */
+}
+
+/* LA CLAVE: Aquí fijamos el tamaño de la tarjeta blanca */
+.card-marca {
+    background-color: white;
+    width: 80px;           /* Ajusta este ancho si las quieres más grandes o pequeñas */
+    height: 80px;          /* Ajusta este alto igual que el ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 8px;          /* Espacio para que el logo no toque los bordes */
+    overflow: hidden;      /* Corta cualquier cosa que se salga */
+}
+
+/* IMPORTANTE: Esto obliga a la imagen gigante a encogerse */
+.card-marca img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;   /* Mantiene la forma del logo sin estirarlo */
+}
+
+
+
+
+    @media screen and (max-width: 500px ){
+    }
 
 
 /* Ajuste de seguridad para que nada desaparezca */
