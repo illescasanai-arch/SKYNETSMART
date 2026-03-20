@@ -252,20 +252,36 @@ img {
 
 
 #buscar {
-  position: fixed;        /* Lo fija en pantalla */
-  top: 20px;              /* Separado 20px desde arriba */
-  right: 250px;            /* Pegado a la derecha */
-  z-index: 1000;          /* Encima de otros elementos */
-
+  position: fixed;
+  top: 20px;
+  /* CAMBIO: En lugar de un valor fijo (250px), usamos un porcentaje o lo centramos */
+  right: 5%;             /* Se separa un 5% del borde derecho al usar porcenmtajes cambia su tamano dependiendo la pantalla*/
+  width: 30%;            /* El ancho es relativo al tamaño de la pantalla */
+  min-width: 200px;      /* Pero nunca será más pequeño que 200px */
+  max-width: 400px;      /* Y nunca más grande que 400px */
+  
+  z-index: 1000;
   border: 3px solid rgb(44, 184, 74);
   border-radius: 8px;
-  padding: 0.1px 10px;
+  padding: 0 10px;
   height: 35px;
-  width: 300px;
   font-size: 16px;
   background-color: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* IMPORTANTE: para que el padding no agrande el ancho */
 }
+
+/* 2. MODO CELULAR */
+@media (max-width: 768px) {
+  #buscar {
+    width: 90%;          /* En celular ocupa casi todo el ancho */
+    right: 5%;           /* Lo centramos visualmente */
+    top: 10px;           /* Lo subimos un poquito para ganar espacio */
+    font-size: 14px;     /* Letra un pelín más pequeña */
+    height: 40px;        /* Un poquito más alto para que sea fácil tocarlo con el dedo */
+  }
+}
+
 /* Este contenedor junta a los dos y los centra */
 .bloque-publicidad-inicio {
     display: flex;
