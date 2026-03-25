@@ -247,11 +247,24 @@ img {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 25px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
   h1 {
       color:rgb(144, 36, 12);
+
+  }
+
+   h5 {
+      color:rgb(66, 66, 66);
+
+  }
+  h3 {
+      text-align: center;
+
+  }
+  summary {
+      text-align: center;
 
   }
 }
