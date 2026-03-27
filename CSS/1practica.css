@@ -10,7 +10,7 @@ body {
 }
 /****************************************************************************************************************/
 /* --- 1. EL ENCABEZADO (CONTENEDOR PADRE) --- */
-
+/*tiutlo diseno de las redes sociales y imagen esquina  */
 .titulo {
   display: flex;
   flex-direction: column; /* Apila los elementos */
@@ -31,7 +31,7 @@ body {
     width: 100%;
     padding-bottom: 0;
 }
-
+/*imagen skynet*/
 .imagen-esquina {
     width: 250px; /* Ajuste para que se vea bien en laptop */
     height: auto;
@@ -63,7 +63,6 @@ body {
 }
 
 #buscar {
-  /* Quitamos position: fixed o márgenes negativos que causan el choque */
   position: relative; 
   width: 30%;
   min-width: 250px;
@@ -368,11 +367,10 @@ html, body {
   color: #fff;
   text-align: center;
   padding: 10px 16px;
- article p {
-  font-size: 10px; /* Puedes ajustar este número a tu gusto */
-  margin: 5px 0;   /* Opcional: para que no estén tan separados entre sí */
+p{
+  color: #fff;
+  font-size: 10px;
 }
-
 }
 
 
