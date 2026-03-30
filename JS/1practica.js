@@ -167,3 +167,32 @@ function irAlInicio() {
     // 4. Limpia el buscador para que no queden textos viejos
     if (inputBuscar) inputBuscar.value = '';
 }
+
+/************************************************************************************************************/
+// --- FUNCIÓN PARA FILTRAR SUMINISTROS ---
+function filtrarSuministros(categoria, botonPresionado) {
+    // 1. Quitarle la clase 'activo' a todos los botones
+    let botones = document.querySelectorAll('.btn-suministro');
+    botones.forEach(function(btn) {
+        btn.classList.remove('activo');
+    });
+    
+    // 2. Ponerle la clase 'activo' (verde) solo al botón que se hizo clic
+    botonPresionado.classList.add('activo');
+
+    // 3. Filtrar los productos
+    let productos = document.querySelectorAll('.item-suministro');
+    
+    productos.forEach(function(producto) {
+        if (categoria === 'todos') {
+            producto.style.display = 'block'; // Muestra todos
+        } else {
+            // Si la tarjeta tiene la clase de la categoría (ej. 'tintas'), se muestra, si no, se oculta
+            if (producto.classList.contains(categoria)) {
+                producto.style.display = 'block';
+            } else {
+                producto.style.display = 'none';
+            }
+        }
+    });
+}

@@ -1,3 +1,10 @@
+
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
 body {
   margin: 0;
   font-family: "Oswald", sans-serif;
@@ -11,16 +18,19 @@ body {
 /****************************************************************************************************************/
 /* --- 1. EL ENCABEZADO (CONTENEDOR PADRE) --- */
 /*tiutlo diseno de las redes sociales y imagen esquina  */
+/* --- 1. EL ENCABEZADO (CONTENEDOR PADRE) --- */
 .titulo {
-  display: flex;
-  flex-direction: column; /* Apila los elementos */
-  align-items: center;    /* Centra todo */
+    display: flex !important;
+    flex-direction: column !important; /* Re-fuerza que Logo, Buscar y Carrusel estén uno sobre otro */
+    align-items: center !important;    /* Re-fuerza que todo esté centrado horizontalmente */
   background-color: black;
   
   /* --- ESTA ES LA LÍNEA QUE MANDA --- */
   gap: 5px;  /* <--- Cámbialo a 2px o 0px para que el buscador suba pegadito al logo */
   
   padding: 10px;
+ width: 100%;
+ box-sizing: border-box;
 }
 
 /* --- 2. FILA SUPERIOR (LOGO Y REDES) --- */
@@ -87,26 +97,32 @@ body {
 }
 
 /* --- 4. EL MENÚ DE CATEGORÍAS --- */
+/* --- 4. EL MENÚ DE CATEGORÍAS (CARRUSEL) --- */
+
+/* --- 4. EL MENÚ DE CATEGORÍAS (CARRUSEL) --- */
 .carrusel {
   display: flex;
-  overflow-x: auto; /* Permite el scroll horizontal */
+  overflow-x: auto; 
   gap: 0px;
   padding: 10px 5px;
   scroll-behavior: smooth;
   white-space: nowrap;
   justify-content: flex-start;
-  
-  /* CAMBIO IMPORTANTE: Eliminamos el margin-top de 75px */
-  /* Ahora el carrusel se posiciona automáticamente debajo del buscador */
   margin-top: 0; 
-  
   width: 100%;
   box-sizing: border-box;
+  
+  /* Oculta la barra en Firefox e IE */
+  scrollbar-width: none !important; 
+  -ms-overflow-style: none !important; 
 }
 
-/* Escondemos la barra de scroll para que se vea limpio como antes */
+/* Oculta la barra en Chrome, Edge y Safari (¡OJO! Sin espacios antes de los dos puntos) */
 .carrusel::-webkit-scrollbar {
-  display: none;
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
 }
 
 .enlace {
@@ -213,7 +229,9 @@ img {
      #electrica6, #electrica66, #electrica666, #electrica6666, #electrica8, #electrica88
     , #electrica888, #lector2, #base2, #cortapicos2, #rj2, #tp2, #tp22, #adaptadorblu2, #adaptadorblu22, #wifi2, #Tarjetared2,
     #Router2, #soporte2, #soporte22, #Bateria2, #relog2, #cinta2, #cinta22, #cinta222, #lector22, #lector222, #lenovo_v15_g42, 
-    #lenovo_idepad_15irh2
+    #lenovo_idepad_15irh2, #teroste19162, #LG-ultragear-242, #LG-ultragear-2423, #teros_te_2714s2, #teros_te_2415s2, #rollo80x80_2,
+    #tinta544_2, #ribbonEpson2, #tinta544n2,#tinta544y2, #tinta544m2, #tonerhpn2, #rolloTermico79_2, #tonerlexmarkb224h002, #tinta544c2, #rollotermico80x68_2,
+    #rollobond76mm2, #cajamantenimientot04d12, #cajamantenimientoc93442
     {
       display: none;
     }
@@ -355,6 +373,8 @@ img {
 html, body {
   height: 100%;
   margin: 0;
+  /* --- LAS DOS REGLAS MÁGICAS --- */
+  
 }
 
 .footer {
@@ -476,4 +496,66 @@ body > :not(.footer):last-child {
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     z-index: 10;
     letter-spacing: 2px;
+}
+
+/* ---- ESTILOS PARA EVITAR DESCUADRES DE IMÁGENES ---- */
+
+/* 1. Definimos un contenedor de altura fija para las fotos */
+.tarjeta .contenedor-imagen-standard {
+    width: 100%;
+    height: 250px; /* <-- Aquí controlas el tamaño, prueba con 250px o 300px */
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin-bottom: 10px;     
+}
+
+.tarjeta .contenedor-imagen-standard img {
+    width: 110% !important;  /* Fuerza el ancho */
+    height: 110% !important; /* Fuerza el alto */
+    max-width: none !important; /* Rompe cualquier límite anterior */
+    object-fit: contain !important; /* Ajusta sin deformar */
+} 
+
+/******************************************************************************************************************/
+/* --- ESTILOS PARA LOS FILTROS DE SUMINISTROS --- */
+.menu-suministros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap; 
+}
+
+.btn-suministro {
+    background-color: transparent;
+    color: rgb(10, 10, 10);
+    border: 2px solid rgb(10, 10, 10);
+    padding: 8px 18px;
+    font-size: 15px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el mouse o cuando el botón está activo */
+.btn-suministro:hover, .btn-suministro.activo {
+    background-color: rgb(118, 221, 97);
+    color: black;
+    border-color: rgb(118, 221, 97);
+}
+
+/*************************************************************************************************************************************************/
+
+/* Quita los puntos negros de las listas en la sección de Más Información */
+.tarjeta details ul {
+    list-style-type: none; /* Esto es lo que desaparece los puntos */
+    padding-left: 0;       /* Quita el espacio vacío que deja el punto a la izquierda */
+    margin-top: 10px;
+}
+
+/* Agrega un pequeño espacio entre cada línea para que respire el texto */
+.tarjeta details li {
+    margin-bottom: 10px;
 }
