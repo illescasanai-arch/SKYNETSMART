@@ -235,7 +235,7 @@ img {
     #cartuchoepsont748xxlcyan2, #cartuchocanonpg140negro2, #almohadillaepsonl2102, #almohadillaepsonl31102, #resmapapela475g2, #etiquetatermicazebra5x22,
     #etiquetatermicazebra76x252, #etiquetatransferenciatermica5x22, #etiquetazebra4x62, #tintaepsont504negro2, #tintaepsont504cyan2, #tintaepsont504magenta2, #tintaepsont504amarillo2,
     #tintaepsont664negro2, #tintaepsont664cyan2, #tintaepsont664magenta2, #tintaepsont664amarillo2, #cartuchoepsont748xxlnegro2, #cartuchoepsont748xxlmagenta2, #cartuchoepsont748xxlamarillo2, #cintaepsonfx8902, #cintaepsonlx3502,
-    #rollopapelquimico75mm2
+    #rollopapelquimico75mm2, #tarjetavideoarktekgt6102, #tarjetavideomsigt7102, #mainboardasusq670m2, #discon300pro8tb2
     {
       display: none;
     }
@@ -502,24 +502,26 @@ body > :not(.footer):last-child {
     letter-spacing: 2px;
 }
 
-/* ---- ESTILOS PARA EVITAR DESCUADRES DE IMÁGENES ---- */
+/* ---- ESTILOS CORREGIDOS PARA EVITAR DESCUADRES ---- */
 
-/* 1. Definimos un contenedor de altura fija para las fotos */
 .tarjeta .contenedor-imagen-standard {
     width: 100%;
-    height: 250px; /* <-- Aquí controlas el tamaño, prueba con 250px o 300px */
+    height: 220px; /* Mantén una altura estricta. 250px puede ser muy alto para 4 columnas */
     display: flex;
     justify-content: center; 
     align-items: center;     
-    margin-bottom: 10px;     
+    margin-bottom: 10px;
+    overflow: hidden; /* CRÍTICO: Actúa como una guillotina. Nada sale de esta caja */
 }
 
 .tarjeta .contenedor-imagen-standard img {
-    width: 110% !important;  /* Fuerza el ancho */
-    height: 110% !important; /* Fuerza el alto */
-    max-width: none !important; /* Rompe cualquier límite anterior */
-    object-fit: contain !important; /* Ajusta sin deformar */
-} 
+    max-width: 100%; /* El freno de emergencia. La imagen NUNCA será más ancha que su caja */
+    max-height: 100%; /* La imagen NUNCA será más alta que su caja */
+    object-fit: contain; /* Ajusta la foto perfectamente sin estirarla ni deformarla */
+    cursor: pointer;
+}
+
+
 
 /******************************************************************************************************************/
 /* --- ESTILOS PARA LOS FILTROS DE SUMINISTROS --- */
