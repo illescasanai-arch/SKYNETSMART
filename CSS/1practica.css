@@ -563,3 +563,70 @@ body > :not(.footer):last-child {
 .tarjeta details li {
     margin-bottom: 10px;
 }
+
+/* =========================================
+   ESTILOS DEL PANEL DE FILTROS (PÍLDORAS)
+========================================== */
+.panel-filtros-pildora {
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen a la siguiente línea si no caben */
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+}
+
+.btn-pildora {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 8px; /* Bordes redondeados como en tu imagen */
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.btn-pildora:hover {
+    background-color: #6ceb6c;
+}
+
+/* CLASE DINÁMICA: Este es el verde cuando el botón está presionado */
+.btn-pildora.activo {
+    background-color: #6ceb6c; /* El verde de tu imagen */
+    border-color: #6ceb6c;
+    color: #000000;
+}
+
+/* 1. Corrección para centrar los botones */
+.panel-filtros-pildora {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center; /* Esto centra los botones en medio de la pantalla */
+}
+
+/* 2. Corrección para la estructura de 4 columnas de las tarjetas */
+.galeria-componentes {
+    display: grid;
+    /* Esto crea 4 columnas del mismo tamaño. Si quieres 5, cambia el 4 por un 5 */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espacio entre las tarjetas */
+    width: 100%;
+    max-width: 1200px; /* Evita que se estire demasiado en pantallas gigantes */
+    margin: 0 auto; /* Centra la galería entera */
+}
+
+/* Regla responsiva para que no se aplaste en celulares y tablets */
+@media (max-width: 900px) {
+    .galeria-componentes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria-componentes {
+        grid-template-columns: 1fr; /* 1 columna en celulares */
+    }
+}

@@ -196,3 +196,41 @@ function filtrarSuministros(categoria, botonPresionado) {
         }
     });
 }
+/************************************************************************************************************/
+// FUNCIÓN PARA FILTRAR COMPONENTES Y CAMBIAR COLOR DEL BOTÓN
+function filtrarComponentes(categoriaSeleccionada, botonClicado) {
+    
+    // 1. GESTIÓN VISUAL DE LOS BOTONES
+    // Capturamos todos los botones dentro de este panel específico
+    let botones = document.querySelectorAll('.panel-filtros-pildora .btn-pildora');
+    // Le quitamos la clase 'activo' (el color verde) a todos
+    botones.forEach(boton => boton.classList.remove('activo'));
+    // Le ponemos la clase 'activo' SOLO al botón que se acaba de presionar
+    botonClicado.classList.add('activo');
+
+    // 2. FILTRADO DE TARJETAS
+    // Nos aseguramos de buscar solo dentro de la sección de componentes
+    let tarjetas = document.querySelectorAll('#Componentes .tarjeta');
+    
+    tarjetas.forEach(tarjeta => {
+        if (categoriaSeleccionada === 'todas') {
+            tarjeta.style.display = 'block'; 
+        } else {
+            if (tarjeta.classList.contains(categoriaSeleccionada)) {
+                tarjeta.style.display = 'block';
+            } else {
+                tarjeta.style.display = 'none';
+            }
+        }
+    });
+
+    // 3. OCULTAR SUBTÍTULOS
+    let subtitulos = document.querySelectorAll('#Componentes .subtitulo-categoria');
+    subtitulos.forEach(subtitulo => {
+        if (categoriaSeleccionada === 'todas') {
+            subtitulo.style.display = 'block';
+        } else {
+            subtitulo.style.display = 'none';
+        }
+    });
+}

@@ -591,508 +591,436 @@
 
   </section>
   </section>
+  
   </nav>
 
   
-  <nav id="Componentes" class="seccion-oculta">
-      <h2>🧩 Componentes</h2>
-      <section class="contenedorCelulares">
-      <section class="galeriaCelulares">
+  <section id="Componentes" class="seccion-oculta">
+    <h2>🧩 Componentes de PC</h2>
 
-      <!-- PAR MAINBOARD ASUS H310M-E -->
-      <div class="tarjeta">
-        <img id="componentes1" src="IMAGENES/Imagenes componentes/mainboard1.jpg" onclick="cambiarImagen('componentes1', 'mainboard2')">
-        <img id="mainboard2" src="IMAGENES/Imagenes componentes/mainboard2.jpg" onclick="cambiarImagen('mainboard2', 'componentes1')">
-        <h3 class="titulocompu1">MAINBOARD ASUS H310M-E</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Intel 8ª y 9ª generación-LGA 1151-Hasta 32 GB DDR4-1 ranura M.2, 4 puertos SATA III-Integrados, salidas HDMI y VGA-Realtek 8 canales-Puerto Gigabit-Micro-ATX</li>
-        <h1>PRECIO: $108.15</h1>
-      </ul>
+    <div class="panel-filtros-pildora">
+        <button class="btn-pildora activo" onclick="filtrarComponentes('todas', this)">Ver Todo</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('mainboard', this)">Mainboards</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('almacenamiento', this)">Discos Duros</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('procesador', this)">Procesadores</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('tarjetavideo', this)">Tarjetas de Video</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('ram', this)">Memorias RAM</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('case', this)">Case</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('fuente', this)">Fuente de poder</button>
+        <button class="btn-pildora" onclick="filtrarComponentes('refrigeracion', this)">Ventiladores y coolers</button>
+    </div>
 
-            </details>
-          </form>
-      </div>
+    <div class="contenedor-componentes">
+        <div class="galeria-componentes">
 
-      <!-- PAR MAINBOARD MSI PRO H610M-S --> 
-      <div class="tarjeta">
-        <img id="componentes11" src="IMAGENES/Imagenes componentes/mainboard11.jpg" onclick="cambiarImagen('componentes11', 'mainboard22')">
-        <img id="mainboard22" src="IMAGENES/Imagenes componentes/mainboard22.jpg" onclick="cambiarImagen('mainboard22', 'componentes11')">
-        <h3 class="titulocompu1">MAINBOARD MSI PRO H610M-S</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Intel 12ª, 13ª y 14ª generación - LGA 1700 - Hasta 64 GB DDR4 (3200 MHz), 2 ranuras - 1 ranura M.2 NVMe, 2 puertos SATA III - Integrados, salidas HDMI y VGA - Realtek 7.1 canales - Puerto Gigabit - Micro-ATX</li>
-        <h1>PRECIO: $89.84</h1>
-      </ul>
+            <div class="tarjeta mainboard">
+                <img id="componentes1" src="IMAGENES/Imagenes componentes/mainboard1.jpg" onclick="cambiarImagen('componentes1', 'mainboard2')">
+                <img id="mainboard2" src="IMAGENES/Imagenes componentes/mainboard2.jpg" onclick="cambiarImagen('mainboard2', 'componentes1')">
+                <h3 class="titulocompu1">MAINBOARD ASUS H310M-E</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Intel 8ª y 9ª generación - LGA 1151 - Hasta 32 GB DDR4 - 1 ranura M.2, 4 puertos SATA III - Integrados, salidas HDMI y VGA - Realtek 8 canales - Puerto Gigabit - Micro-ATX</li>
+                        </ul>
+                        <h1>PRECIO: $108.15</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta mainboard">
+                <img id="componentes11" src="IMAGENES/Imagenes componentes/mainboard11.jpg" onclick="cambiarImagen('componentes11', 'mainboard22')">
+                <img id="mainboard22" src="IMAGENES/Imagenes componentes/mainboard22.jpg" onclick="cambiarImagen('mainboard22', 'componentes11')">
+                <h3 class="titulocompu1">MAINBOARD MSI PRO H610M-S</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Intel 12ª, 13ª y 14ª generación - LGA 1700 - Hasta 64 GB DDR4 (3200 MHz), 2 ranuras - 1 ranura M.2 NVMe, 2 puertos SATA III - Integrados, salidas HDMI y VGA - Realtek 7.1 canales - Puerto Gigabit - Micro-ATX</li>
+                        </ul>
+                        <h1>PRECIO: $89.84</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR PROCESADOR INTEL CORE I5 -->
-      <div class="tarjeta">
-        <img id="procesador1" src="IMAGENES/Imagenes componentes/procesador1.jpg" onclick="cambiarImagen('procesador1', 'procesador2')">
-        <img id="procesador2" src="IMAGENES/Imagenes componentes/procesador2.jpg" onclick="cambiarImagen('procesador2', 'procesador1')">
-        <h3 class="titulocompu1">PROCESADOR INTEL CORE I5</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>14ª Generación (Raptor Lake) - LGA 1700 - 10 núcleos, 16 hilos - Hasta 4.7 GHz - Intel UHD 730 integrados - DDR4 (3200 MHz) y DDR5 (4800 MHz) - 65W - Compatible con H610, B660, B760</li>
-        <h1>PRECIO: $215.00</h1>
+            <div class="tarjeta procesador">
+                <img id="procesador1" src="IMAGENES/Imagenes componentes/procesador1.jpg" onclick="cambiarImagen('procesador1', 'procesador2')">
+                <img id="procesador2" src="IMAGENES/Imagenes componentes/procesador2.jpg" onclick="cambiarImagen('procesador2', 'procesador1')">
+                <h3 class="titulocompu1">PROCESADOR INTEL CORE I5</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>14ª Generación (Raptor Lake) - LGA 1700 - 10 núcleos, 16 hilos - Hasta 4.7 GHz - Intel UHD 730 integrados - DDR4 (3200 MHz) y DDR5 (4800 MHz) - 65W - Compatible con H610, B660, B760</li>
+                        </ul>
+                        <h1>PRECIO: $215.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta procesador agotado">
+                <img id="procesador11" src="IMAGENES/Imagenes componentes/procesador11.jpg" onclick="cambiarImagen('procesador11', 'procesador22')">
+                <img id="procesador22" src="IMAGENES/Imagenes componentes/procesador22.jpg" onclick="cambiarImagen('procesador22', 'procesador11')">
+                <h3 class="titulocompu1">PROCESADOR INTEL CORE ULTRA 7</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Serie Ultra (Arrow Lake / Meteor Lake) - LGA 1851 - 20 núcleos, 20 hilos - Hasta 5.5 GHz - IA integrada con NPU - Gráficos Intel - 65W a 125W - Uso ideal: IA, productividad, diseño y juegos avanzados</li>
+                        </ul>
+                        <h1>PRECIO: $478.00</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR PROCESADOR INTEL CORE ULTRA 7 -->
-      <div class="tarjeta agotado">
-        <img id="procesador11" src="IMAGENES/Imagenes componentes/procesador11.jpg" onclick="cambiarImagen('procesador11', 'procesador22')">
-        <img id="procesador22" src="IMAGENES/Imagenes componentes/procesador22.jpg" onclick="cambiarImagen('procesador22', 'procesador11')">
-        <h3 class="titulocompu1">PROCESADOR INTEL CORE ULTRA 7</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-     <ul>
-    <li>Serie Ultra (Arrow Lake / Meteor Lake) - LGA 1851 - 20 núcleos, 20 hilos - Hasta 5.5 GHz - IA integrada con NPU - Gráficos Intel - 65W a 125W - Uso ideal: IA, productividad, diseño y juegos avanzados</li>
-    <h1>PRECIO: $478.00</h1>
-</ul>
+            <div class="tarjeta ram agotado">
+                <img id="memoria1" src="IMAGENES/Imagenes componentes/memoria1.jpg" onclick="cambiarImagen('memoria1', 'memoria2')">
+                <img id="memoria2" src="IMAGENES/Imagenes componentes/memoria2.jpg" onclick="cambiarImagen('memoria2', 'memoria1')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP KINGSTON 8GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>8 GB por módulo - DDR4 SDRAM (PC4-25600) - 3200 MT/s (~25.6 GB/s) - 1.20 V - Latencia CL22 - Formato SoDIMM 260 pines (Laptops y Mini PCs)</li>
+                        </ul>
+                        <h1>PRECIO: $70.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta ram agotado">
+                <img id="memoria11" src="IMAGENES/Imagenes componentes/memoria11.jpg" onclick="cambiarImagen('memoria11', 'memoria22')">
+                <img id="memoria22" src="IMAGENES/Imagenes componentes/memoria22.jpg" onclick="cambiarImagen('memoria22', 'memoria11')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA PC CRUCIAL 16GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>16 GB (PC de escritorio) - DDR5 UDIMM (6000 MT/s) - 1.35 V (Perfil XMP/EXPO) - Latencia CL36 - Intel 12ª-14ª gen y AMD Ryzen 7000+ - Disipador perfil bajo, negro</li>
+                        </ul>
+                        <h1>PRECIO: $95.00</h1>
+                    </details>
+                </form>
+            </div>
 
+            <div class="tarjeta ram">
+                <img id="memoria111" src="IMAGENES/Imagenes componentes/memoria3.jpg" onclick="cambiarImagen('memoria111', 'memoria222')">
+                <img id="memoria222" src="IMAGENES/Imagenes componentes/memoria33.jpg" onclick="cambiarImagen('memoria222', 'memoria111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA PC GOLDEN 8GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>8 GB (PC de escritorio) - DDR3, 1600 MHz (PC3-12800) - 1.5 V - Latencia CL11 - Compatible con ranuras DDR3 - Formato DIMM 240 pines</li>
+                        </ul>
+                        <h1>PRECIO: $21.56</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA LAPTOP KINGSTON 8GB-->
-      <div class="tarjeta agotado">
-        <img id="memoria1" src="IMAGENES/Imagenes componentes/memoria1.jpg" onclick="cambiarImagen('memoria1', 'memoria2')">
-        <img id="memoria2" src="IMAGENES/Imagenes componentes/memoria2.jpg" onclick="cambiarImagen('memoria2', 'memoria1')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP KINGSTON 8GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>8 GB por módulo - DDR4 SDRAM (PC4-25600) - 3200 MT/s (~25.6 GB/s) - 1.20 V - Latencia CL22 - Formato SoDIMM 260 pines (Laptops y Mini PCs)</li>
-        <h1>PRECIO: $70.00</h1>
-      </ul>
+            <div class="tarjeta ram">
+                <img id="memoria1111" src="IMAGENES/Imagenes componentes/memoria4.jpg" onclick="cambiarImagen('memoria1111', 'memoria2222')">
+                <img id="memoria2222" src="IMAGENES/Imagenes componentes/memoria44.jpg" onclick="cambiarImagen('memoria2222', 'memoria1111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP GOLDEN 8GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>8 GB (1 módulo) - DDR3L, 1600 MHz (PC3-12800) - 1.5 V - Latencia CL11 - Formato SO-DIMM 204 pines - Compatible con Laptops (Intel 1ª–4ª gen)</li>
+                        </ul>
+                        <h1>PRECIO: $24.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta ram">
+                <img id="memoria11111" src="IMAGENES/Imagenes componentes/memoria5.jpg" onclick="cambiarImagen('memoria11111', 'memoria22222')">
+                <img id="memoria22222" src="IMAGENES/Imagenes componentes/memoria55.jpg" onclick="cambiarImagen('memoria22222', 'memoria11111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON 16GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>16 GB (1 módulo) - DDR5, 5600 MHz / 3200 MHz - 1.2 V / 1.35 V (XMP) - Latencia CL22 / CL16 - Compatible con Intel y AMD - Disipador (Versión FURY)</li>
+                        </ul>
+                        <h1>PRECIO: $204.24</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA PC CRUCIAL 16GB -->
-      <div class="tarjeta agotado">
-        <img id="memoria11" src="IMAGENES/Imagenes componentes/memoria11.jpg" onclick="cambiarImagen('memoria11', 'memoria22')">
-        <img id="memoria22" src="IMAGENES/Imagenes componentes/memoria22.jpg" onclick="cambiarImagen('memoria22', 'memoria11')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA PC CRUCIAL 16GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>16 GB (PC de escritorio) - DDR5 UDIMM (6000 MT/s) - 1.35 V (Perfil XMP/EXPO) - Latencia CL36 - Intel 12ª-14ª gen y AMD Ryzen 7000+ - Disipador perfil bajo, negro</li>
-        <h1>PRECIO: $95.00</h1>
-      </ul>
+            <div class="tarjeta ram">
+                <img id="memoria111111" src="IMAGENES/Imagenes componentes/memoria6.jpg" onclick="cambiarImagen('memoria111111', 'memoria222222')">
+                <img id="memoria222222" src="IMAGENES/Imagenes componentes/memoria66.jpg" onclick="cambiarImagen('memoria222222', 'memoria111111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP KINGSTON 16GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>16 GB (Laptops) - DDR4, 3200 MHz (SO-DIMM) - 1.2 V - Latencia CL22 - Compatible con ranura DDR4 SO-DIMM - 260 pines, No ECC, Unbuffered</li>
+                        </ul>
+                        <h1>PRECIO: $172.50</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta ram agotado">
+                <img id="memoria1111111" src="IMAGENES/Imagenes componentes/memoria7.jpg" onclick="cambiarImagen('memoria1111111', 'memoria2222222')">
+                <img id="memoria2222222" src="IMAGENES/Imagenes componentes/memoria77.jpg" onclick="cambiarImagen('memoria2222222', 'memoria1111111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON FURY BEAST 32GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>32 GB (2 × 16 GB) - DDR5, 5200–6800 MHz - 1.25–1.4 V - Latencia CL30–CL40 - Intel XMP 3.0 y AMD EXPO - Disipador con opción RGB</li>
+                        </ul>
+                        <h1>PRECIO: $149.80</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA PC GOLDEN 8GB -->
-      <div class="tarjeta">
-        <img id="memoria111" src="IMAGENES/Imagenes componentes/memoria3.jpg" onclick="cambiarImagen('memoria111', 'memoria222')">
-        <img id="memoria222" src="IMAGENES/Imagenes componentes/memoria33.jpg" onclick="cambiarImagen('memoria222', 'memoria111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA PC GOLDEN 8GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-         <li>8 GB (PC de escritorio) - DDR3, 1600 MHz (PC3-12800) - 1.5 V - Latencia CL11 - Compatible con ranuras DDR3 - Formato DIMM 240 pines</li>
-        <h1>PRECIO: $21.56</h1>
-        </ul>
+            <div class="tarjeta ram agotado">
+                <img id="memoria11111111" src="IMAGENES/Imagenes componentes/memoria8.jpg" onclick="cambiarImagen('memoria11111111', 'memoria22222222')">
+                <img id="memoria22222222" src="IMAGENES/Imagenes componentes/memoria88.jpg" onclick="cambiarImagen('memoria22222222', 'memoria11111111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON 8GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>8 GB (PC de escritorio) - DDR4, 3200 MHz - 1.2 V (Bajo consumo) - Formato DIMM - Compatible con Intel y AMD</li>
+                        </ul>
+                        <h1>PRECIO: $24.17</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta ram agotado">
+                <img id="memoria111111111" src="IMAGENES/Imagenes componentes/memoria9.jpg" onclick="cambiarImagen('memoria111111111', 'memoria222222222')">
+                <img id="memoria222222222" src="IMAGENES/Imagenes componentes/memoria99.jpg" onclick="cambiarImagen('memoria222222222', 'memoria111111111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP CORSAIR VENGEANCE 16GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>16 GB - DDR4 SO-DIMM (260 pines) - 3200 MHz (PC4-25600) - Latencia CL22 - 1.20 V (Bajo consumo) - Compatible con Laptops Intel/AMD, NUCs y PCs pequeños</li>
+                        </ul>
+                        <h1>PRECIO: $41.00</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA LAPTOP GOLDEN 8GB -->
-      <div class="tarjeta">
-        <img id="memoria1111" src="IMAGENES/Imagenes componentes/memoria4.jpg" onclick="cambiarImagen('memoria1111', 'memoria2222')">
-        <img id="memoria2222" src="IMAGENES/Imagenes componentes/memoria44.jpg" onclick="cambiarImagen('memoria2222', 'memoria1111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP GOLDEN 8GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>8 GB (1 módulo) - DDR3L, 1600 MHz (PC3-12800) - 1.5 V - Latencia CL11 - Formato SO-DIMM 204 pines - Compatible con Laptops (Intel 1ª–4ª gen)</li>
-      <h1>PRECIO: $24.00</h1>
-      </ul>
+            <div class="tarjeta ram agotado">
+                <img id="memoria1111111111" src="IMAGENES/Imagenes componentes/memoria10.jpg" onclick="cambiarImagen('memoria1111111111', 'memoria2222222222')">
+                <img id="memoria2222222222" src="IMAGENES/Imagenes componentes/memoria1010.jpg" onclick="cambiarImagen('memoria2222222222', 'memoria1111111111')">
+                <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP SAMSUNG 8GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>8 GB (Laptops) - DDR5 - 3200 MHz - Formato SO-DIMM - 1.2V (DDR4) / 1.1V (DDR5) - Compatible con Laptops de última generación</li>
+                        </ul>
+                        <h1>PRECIO: $37.00</h1>
+                    </details>
+                </form>
+            </div>
 
+            <div class="tarjeta almacenamiento">
+                <img id="disco1" src="IMAGENES/Imagenes componentes/disco1.jpg" onclick="cambiarImagen('disco1', 'disco2')">
+                <img id="disco2" src="IMAGENES/Imagenes componentes/disco11.jpg" onclick="cambiarImagen('disco2', 'disco1')">
+                <h3 class="titulocompu1">DISCO DURO KINGSTON NV3 1TB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>SSD M.2 NVMe PCIe 4.0 (NV3) - 1 TB - Lectura hasta 6,000 MB/s, Escritura hasta 5,000 MB/s - Memoria NAND 3D (Bajo consumo) - Diseño compacto de una sola cara - Ideal para Laptops y PCs Gamer</li>
+                        </ul>
+                        <h1>PRECIO: $179.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta almacenamiento">
+                <img id="disco11" src="IMAGENES/Imagenes componentes/disco2.jpg" onclick="cambiarImagen('disco11', 'disco22')">
+                <img id="disco22" src="IMAGENES/Imagenes componentes/disco22.jpg" onclick="cambiarImagen('disco22', 'disco11')">
+                <h3 class="titulocompu1">DISCO DURO KINGSTON A400 ESTADO SOLIDO 480GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>SSD 2.5″ SATA III - 480 GB - Lectura hasta 500 MB/s, Escritura hasta 450 MB/s - Memoria 3D NAND TLC (Sin DRAM) - Mejora rendimiento en Laptops y PCs antiguos - Económico y de bajo consumo</li>
+                        </ul>
+                        <h1>PRECIO: $91.87</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA PC KINGSTON 16GB -->
-      <div class="tarjeta">
-        <img id="memoria11111" src="IMAGENES/Imagenes componentes/memoria5.jpg" onclick="cambiarImagen('memoria11111', 'memoria22222')">
-        <img id="memoria22222" src="IMAGENES/Imagenes componentes/memoria55.jpg" onclick="cambiarImagen('memoria22222', 'memoria11111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON 16GB </h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>16 GB (1 módulo) - DDR5, 5600 MHz / 3200 MHz - 1.2 V / 1.35 V (XMP) - Latencia CL22 / CL16 - Compatible con Intel y AMD - Disipador (Versión FURY)</li>
-        <h1>PRECIO: $204.24</h1>
-      </ul>
+            <div class="tarjeta almacenamiento">
+                <img id="disco111" src="IMAGENES/Imagenes componentes/disco3.jpg" onclick="cambiarImagen('disco111', 'disco222')">
+                <img id="disco222" src="IMAGENES/Imagenes componentes/disco33.jpg" onclick="cambiarImagen('disco222', 'disco111')">
+                <h3 class="titulocompu1">DISCO DURO KINGSTON A400 ESTADO SOLIDO 960GB</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>SSD 2.5″ SATA III (Kingston A400) - 960 GB - Lectura hasta 500 MB/s, Escritura hasta 450 MB/s - Memoria NAND TLC (Sin piezas móviles) - Alta durabilidad y resistencia - Ideal para Laptops y PCs de escritorio</li>
+                        </ul>
+                        <h1>PRECIO: $130.81</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta case">
+                <img id="case1" src="IMAGENES/Imagenes componentes/case1.jpg" onclick="cambiarImagen('case1', 'case2')">
+                <img id="case2" src="IMAGENES/Imagenes componentes/case11.jpg" onclick="cambiarImagen('case2', 'case1')">
+                <h3 class="titulocompu1">CASE TERRAX TX-1711R</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Case Terrax TX-1711R - Torre ATX con Panel Lateral Transparente - Tira LED Frontal RGB - Incluye Fuente de Poder - Espacio para SSD/HDD - Ideal para Setup Gamer Inicial</li>
+                        </ul>
+                        <h1>PRECIO: $28.46</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA LAPTOP KINGSTON 16GB -->
-      <div class="tarjeta">
-        <img id="memoria111111" src="IMAGENES/Imagenes componentes/memoria6.jpg" onclick="cambiarImagen('memoria111111', 'memoria222222')">
-        <img id="memoria222222" src="IMAGENES/Imagenes componentes/memoria66.jpg" onclick="cambiarImagen('memoria222222', 'memoria111111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP KINGSTON 16GB </h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-          <li>16 GB (Laptops) - DDR4, 3200 MHz (SO-DIMM) - 1.2 V - Latencia CL22 - Compatible con ranura DDR4 SO-DIMM - 260 pines, No ECC, Unbuffered</li>
-        <h1>PRECIO: $172.50</h1>
-        </ul>
+            <div class="tarjeta case">
+                <img id="case11" src="IMAGENES/Imagenes componentes/case2.png" onclick="cambiarImagen('case11', 'case22')">
+                <img id="case22" src="IMAGENES/Imagenes componentes/case22.png" onclick="cambiarImagen('case22', 'case11')">
+                <h3 class="titulocompu1">CASE CORSAIR MINI 250D OBSIDIAN</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Torre ATX Compacta - Incluye Fuente 600W y Ventilador - Ideal para Oficina o Estudio - Económica y Funcional</li>
+                        </ul>
+                        <h1>PRECIO: $101.97</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta case agotado">
+                <img id="case111" src="IMAGENES/Imagenes componentes/case3.png" onclick="cambiarImagen('case111', 'case222')">
+                <img id="case222" src="IMAGENES/Imagenes componentes/case33.png" onclick="cambiarImagen('case222', 'case111')">
+                <h3 class="titulocompu1">CASE MSI MAG PANO M100R PZ</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Torre Micro-ATX (Mini-ITX) - Vidrio Templado Panorámico - Soporte Back-Connect - 4 Ventiladores ARGB Incluidos - Soporta hasta 11 Ventiladores y Radiador de 360mm - GPU hasta 390mm - USB-C 3.2 Gen 2x2</li>
+                        </ul>
+                        <h1>PRECIO: $139.15</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA PC KINGSTON FURY BEAST 32GB -->
-      <div class="tarjeta agotado">
-        <img id="memoria1111111" src="IMAGENES/Imagenes componentes/memoria7.jpg" onclick="cambiarImagen('memoria1111111', 'memoria2222222')">
-        <img id="memoria2222222" src="IMAGENES/Imagenes componentes/memoria77.jpg" onclick="cambiarImagen('memoria2222222', 'memoria1111111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON FURY BEAST 32GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>32 GB (2 × 16 GB) - DDR5, 5200–6800 MHz - 1.25–1.4 V - Latencia CL30–CL40 - Intel XMP 3.0 y AMD EXPO - Disipador con opción RGB</li>
-        <h1>PRECIO: $149.80</h1>
-      </ul>
+            <div class="tarjeta fuente">
+                <img id="fuente1" src="IMAGENES/Imagenes componentes/fuente1.jpg" onclick="cambiarImagen('fuente1', 'fuente2')">
+                <img id="fuente2" src="IMAGENES/Imagenes componentes/fuente11.jpg" onclick="cambiarImagen('fuente2', 'fuente1')">
+                <h3 class="titulocompu1">FUENTE DE PODER INFINYTEK ATX-850 850W</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Fuente ATX Estándar - 850W (650W Reales) - Conectores: 20-24 pines ATX, 2 SATA, 2 Molex, 1 PCIe - Ventilador de enfriamiento incluido</li>
+                        </ul>
+                        <h1>PRECIO: $30.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta refrigeracion agotado">
+                <img id="ventilador1" src="IMAGENES/Imagenes componentes/ventilador1.jpg" onclick="cambiarImagen('ventilador1', 'ventilador2')">
+                <img id="ventilador2" src="IMAGENES/Imagenes componentes/ventilador11.jpg" onclick="cambiarImagen('ventilador2', 'ventilador1')">
+                <h3 class="titulocompu1">VENTILADOR PARA LAPTOP OVI FN02</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Base de Enfriamiento (Laptops hasta 17″) - 1 o 2 Ventiladores Silenciosos (~1300 RPM) - Alimentación USB Plug & Play - Altura Ajustable y Antideslizante - Mejora la Ventilación</li>
+                        </ul>
+                        <h1>PRECIO: $12.62</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA PC KINGSTON 8GB -->
-      <div class="tarjeta agotado">
-        <img id="memoria11111111" src="IMAGENES/Imagenes componentes/memoria8.jpg" onclick="cambiarImagen('memoria11111111', 'memoria22222222')">
-        <img id="memoria22222222" src="IMAGENES/Imagenes componentes/memoria88.jpg" onclick="cambiarImagen('memoria22222222', 'memoria11111111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA PC KINGSTON 8GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>8 GB (PC de escritorio) - DDR4, 3200 MHz - 1.2 V (Bajo consumo) - Formato DIMM - Compatible con Intel y AMD</li>
-        <h1>PRECIO: $24.17</h1>
-      </ul>
+            <div class="tarjeta refrigeracion">
+                <img id="ventilador11" src="IMAGENES/Imagenes componentes/ventilador2.png" onclick="cambiarImagen('ventilador11', 'ventilador22')">
+                <img id="ventilador22" src="IMAGENES/Imagenes componentes/ventilador22.jpg" onclick="cambiarImagen('ventilador22', 'ventilador11')">
+                <h3 class="titulocompu1">VENTILADOR PARA LAPTOP MARVO FN-40</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Base Refrigerante RGB (Laptops hasta 17″) - Ventilador 180 mm Silencioso (570–800 RPM) - Hub de 2 puertos USB - Rejilla Metálica con Ajuste de Inclinación - Iluminación RGB</li>
+                        </ul>
+                        <h1>PRECIO: $20.12</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta refrigeracion agotado">
+                <img id="ventilador111" src="IMAGENES/Imagenes componentes/ventilador3.png" onclick="cambiarImagen('ventilador111', 'ventilador222')">
+                <img id="ventilador222" src="IMAGENES/Imagenes componentes/ventilador33.jpeg" onclick="cambiarImagen('ventilador222', 'ventilador111')">
+                <h3 class="titulocompu1">VENTILADOR PARA LAPTOP SPEEDMIND SMCOS01 NEGRO</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Base Refrigerante (Laptops 15.6″ a 17″) - Ventilador 14cm con Luz LED (700–1,400 RPM) - 5 Niveles de Inclinación - Hub 2 Puertos USB 2.0 - Diseño Acrílico Silencioso y Ergonómico</li>
+                        </ul>
+                        <h1>PRECIO: $15.50</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA LAPTOP CORSAIR VENGEANCE 16GB -->
-      <div class="tarjeta agotado">
-        <img id="memoria111111111" src="IMAGENES/Imagenes componentes/memoria9.jpg" onclick="cambiarImagen('memoria111111111', 'memoria222222222')">
-        <img id="memoria222222222" src="IMAGENES/Imagenes componentes/memoria99.jpg" onclick="cambiarImagen('memoria222222222', 'memoria111111111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP CORSAIR VENGEANCE 16GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>16 GB - DDR4 SO-DIMM (260 pines) - 3200 MHz (PC4-25600) - Latencia CL22 - 1.20 V (Bajo consumo) - Compatible con Laptops Intel/AMD, NUCs y PCs pequeños</li>
-        <h1>PRECIO: $41.00</h1>
-      </ul>
+            <div class="tarjeta refrigeracion agotado">
+                <img id="ventilador1111" src="IMAGENES/Imagenes componentes/ventilador4.png" onclick="cambiarImagen('ventilador1111', 'ventilador2222')">
+                <img id="ventilador2222" src="IMAGENES/Imagenes componentes/ventilador44.webp" onclick="cambiarImagen('ventilador2222', 'ventilador1111')">
+                <h3 class="titulocompu1">VENTILADOR PARA LAPTOP COOLERPAD NITRON FAN38</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Base Refrigerante (Laptops 15″ a 17″) - 1 o 2 Ventiladores Silenciosos (600–1,400 RPM) - Alimentación USB 5V Plug & Play - Malla Metálica con Ajuste de Altura e Iluminación LED</li>
+                        </ul>
+                        <h1>PRECIO: $13.50</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
+            <div class="tarjeta refrigeracion agotado ">
+                <img id="cooler1" src="IMAGENES/Imagenes componentes/cooler1.webp" onclick="cambiarImagen('cooler1', 'cooler2')">
+                <img id="cooler2" src="IMAGENES/Imagenes componentes/cooler11.webp" onclick="cambiarImagen('cooler2', 'cooler1')">
+                <h3 class="titulocompu1">COOLER BINJU BJ120 ARGB 12 X 12</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Ventilador de Gabinete ARGB (120 mm) - Velocidad ~1200 RPM (45 CFM) - Silencioso (Hasta 30 dB) - Conexión 12V 3 Pines - Iluminación ARGB Personalizable</li>
+                        </ul>
+                        <h1>PRECIO: $9.27</h1>
+                    </details>
+                </form>
+            </div>
 
-      <!-- PAR MEMORIA RAM PARA LAPTOP SAMSUNG 8GB -->
-      <div class="tarjeta agotado">
-        <img id="memoria1111111111" src="IMAGENES/Imagenes componentes/memoria10.jpg" onclick="cambiarImagen('memoria1111111111', 'memoria2222222222')">
-        <img id="memoria2222222222" src="IMAGENES/Imagenes componentes/memoria1010.jpg" onclick="cambiarImagen('memoria2222222222', 'memoria1111111111')">
-        <h3 class="titulocompu1">MEMORIA RAM PARA LAPTOP SAMSUNG 8GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>8 GB (Laptops) - DDR5 - 3200 MHz - Formato SO-DIMM - 1.2V (DDR4) / 1.1V (DDR5) - Compatible con Laptops de última generación</li>
-        <h1>PRECIO: $37.00</h1>
-      </ul>
+            <div class="tarjeta refrigeracion agotado">
+                <img id="cooler11" src="IMAGENES/Imagenes componentes/cooler2.png" onclick="cambiarImagen('cooler11', 'cooler22')">
+                <img id="cooler22" src="IMAGENES/Imagenes componentes/cooler22.webp" onclick="cambiarImagen('cooler22', 'cooler11')">
+                <h3 class="titulocompu1">COOLER DE ENFRIAMIENTO LIQUIDO MSI MAG A15 240 LGA1851</h3>
+                <form action="">
+                    <details> 
+                        <summary>Mas informacion</summary>
+                        <ul>
+                            <li>Enfriamiento Líquido AIO (Radiador 240mm) - Compatible con Intel LGA 1851/1700 y AMD AM5/AM4 - 2 Ventiladores ARGB 120mm (500–2050 RPM) - Bomba Silenciosa (3400 RPM / ~20 dB) - Diseño con Cableado Oculto</li>
+                        </ul>
+                        <h1>PRECIO: $105.00</h1>
+                    </details>
+                </form>
+            </div>
 
-            </details>
-          </form>
-      </div>
-
- <!-- PAR DISCO DURO KINGSTON NV3 500GB -->
-      <div class="tarjeta">
-        <img id="disco1" src="IMAGENES/Imagenes componentes/disco1.jpg" onclick="cambiarImagen('disco1', 'disco2')">
-        <img id="disco2" src="IMAGENES/Imagenes componentes/disco11.jpg" onclick="cambiarImagen('disco2', 'disco1')">
-        <h3 class="titulocompu1">DISCO DURO KINGSTON NV3 1TB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>SSD M.2 NVMe PCIe 4.0 (NV3) - 1 TB - Lectura hasta 6,000 MB/s, Escritura hasta 5,000 MB/s - Memoria NAND 3D (Bajo consumo) - Diseño compacto de una sola cara - Ideal para Laptops y PCs Gamer</li>
-        <h1>PRECIO: $179.00</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR DISCO DURO KINGSTON A400 ESTADO SOLIDO 480GB -->
-      <div class="tarjeta">
-        <img id="disco11" src="IMAGENES/Imagenes componentes/disco2.jpg" onclick="cambiarImagen('disco11', 'disco22')">
-        <img id="disco22" src="IMAGENES/Imagenes componentes/disco22.jpg" onclick="cambiarImagen('disco22', 'disco11')">
-        <h3 class="titulocompu1">DISCO DURO KINGSTON A400 ESTADO SOLIDO 480GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-            <li>SSD 2.5″ SATA III - 480 GB - Lectura hasta 500 MB/s, Escritura hasta 450 MB/s - Memoria 3D NAND TLC (Sin DRAM) - Mejora rendimiento en Laptops y PCs antiguos - Económico y de bajo consumo</li>
-            <h1>PRECIO: $91.87</h1>
-          </ul>
-           </details>
-          </form>
-      </div>
-
-        <!-- PAR DISCO DURO KINGSTON A400 ESTADO SOLIDO 240GB -->
-      <div class="tarjeta">
-        <img id="disco111" src="IMAGENES/Imagenes componentes/disco3.jpg" onclick="cambiarImagen('disco111', 'disco222')">
-        <img id="disco222" src="IMAGENES/Imagenes componentes/disco33.jpg" onclick="cambiarImagen('disco222', 'disco111')">
-        <h3 class="titulocompu1">DISCO DURO KINGSTON A400 ESTADO SOLIDO 960GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-         <li>SSD 2.5″ SATA III (Kingston A400) - 960 GB - Lectura hasta 500 MB/s, Escritura hasta 450 MB/s - Memoria NAND TLC (Sin piezas móviles) - Alta durabilidad y resistencia - Ideal para Laptops y PCs de escritorio</li>
-        <h1>PRECIO: $130.81</h1>
-        </ul>
-            </details>
-          </form>
-      </div>
-
-       <!-- PAR DISCO DURO KINGSTON NV3 1TB -->
-      <div class="tarjeta">
-        <img id="disco1111" src="IMAGENES/Imagenes componentes/disco4.jpg" onclick="cambiarImagen('disco1111', 'disco2222')">
-        <img id="disco2222" src="IMAGENES/Imagenes componentes/disco44.jpg" onclick="cambiarImagen('disco2222', 'disco1111')">
-        <h3 class="titulocompu1">DISCO DURO KINGSTON NV3 1TB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-     <li>SSD M.2 2280 NVMe PCIe 4.0 - 1 TB - Lectura hasta 3,500 MB/s, Escritura hasta 2,800 MB/s - Memoria 3D NAND (Sin DRAM) - Compatible con Laptops y PCs modernos - Rápido y eficiente</li>
-    <h1>PRECIO: $179.68</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-       <!-- PAR DISCO DURO KINGSTON A400 ESTADO SOLIDO 960GB -->
-      <div class="tarjeta">
-        <img id="disco11111" src="IMAGENES/Imagenes componentes/disco5.jpg" onclick="cambiarImagen('disco11111', 'disco22222')">
-        <img id="disco22222" src="IMAGENES/Imagenes componentes/disco55.jpg" onclick="cambiarImagen('disco22222', 'disco11111')">
-        <h3 class="titulocompu1">DISCO DURO KINGSTON A400 ESTADO SOLIDO 960GB</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>SSD 2.5″ SATA III - 960 GB - Lectura hasta 500 MB/s, Escritura hasta 450 MB/s - Memoria 3D NAND TLC (Sin DRAM) - Ideal para actualizar Laptops y PCs - Gran capacidad y bajo consumo</li>
-        <h1>PRECIO: $130.81</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-       <!-- PAR FUENTE DE PODER INFINYTEK ATX-850 850W -->
-      <div class="tarjeta">
-        <img id="fuente1" src="IMAGENES/Imagenes componentes/fuente1.jpg" onclick="cambiarImagen('fuente1', 'fuente2')">
-        <img id="fuente2" src="IMAGENES/Imagenes componentes/fuente11.jpg" onclick="cambiarImagen('fuente2', 'fuente1')">
-        <h3 class="titulocompu1">FUENTE DE PODER INFINYTEK ATX-850 850W</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-         <li>Fuente ATX Estándar - 850W (650W Reales) - Conectores: 20-24 pines ATX, 2 SATA, 2 Molex, 1 PCIe - Ventilador de enfriamiento incluido</li>
-          <h1>PRECIO: $30.00</h1>
-        </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR CASE TERRAX TX-1706C -->
-      <div class="tarjeta">
-        <img id="case1" src="IMAGENES/Imagenes componentes/case1.jpg" onclick="cambiarImagen('case1', 'case2')">
-        <img id="case2" src="IMAGENES/Imagenes componentes/case11.jpg" onclick="cambiarImagen('case2', 'case1')">
-        <h3 class="titulocompu1">CASE TERRAX TX-1711R</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Case Terrax TX-1711R - Torre ATX con Panel Lateral Transparente - Tira LED Frontal RGB - Incluye Fuente de Poder - Espacio para SSD/HDD - Ideal para Setup Gamer Inicial</li>
-        <h1>PRECIO: $28.46</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR CASE CORSAIR MINI 250D OBSIDIAN -->
-      <div class="tarjeta">
-        <img id="case11" src="IMAGENES/Imagenes componentes/case2.png" onclick="cambiarImagen('case11', 'case22')">
-        <img id="case22" src="IMAGENES/Imagenes componentes/case22.png" onclick="cambiarImagen('case22', 'case11')">
-        <h3 class="titulocompu1">CASE CORSAIR MINI 250D OBSIDIAN</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Torre ATX Compacta - Incluye Fuente 600W y Ventilador - Ideal para Oficina o Estudio - Económica y Funcional</li>
-        <h1>PRECIO: $101.97</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR CASE MSI MAG PANO M100R PZ -->
-      <div class="tarjeta agotado">
-        <img id="case111" src="IMAGENES/Imagenes componentes/case3.png" onclick="cambiarImagen('case111', 'case222')">
-        <img id="case222" src="IMAGENES/Imagenes componentes/case33.png" onclick="cambiarImagen('case222', 'case111')">
-        <h3 class="titulocompu1">CASE MSI MAG PANO M100R PZ</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Torre Micro-ATX (Mini-ITX) - Vidrio Templado Panorámico - Soporte Back-Connect - 4 Ventiladores ARGB Incluidos - Soporta hasta 11 Ventiladores y Radiador de 360mm - GPU hasta 390mm - USB-C 3.2 Gen 2x2</li>
-        <h1>PRECIO: $139.15</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR VENTILADOR PARA LAPTOP OVI FN02 -->
-      <div class="tarjeta agotado">
-        <img id="ventilador1" src="IMAGENES/Imagenes componentes/ventilador1.jpg" onclick="cambiarImagen('ventilador1', 'ventilador2')">
-        <img id="ventilador2" src="IMAGENES/Imagenes componentes/ventilador11.jpg" onclick="cambiarImagen('ventilador2', 'ventilador1')">
-        <h3 class="titulocompu1">VENTILADOR PARA LAPTOP OVI FN02</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Base de Enfriamiento (Laptops hasta 17″) - 1 o 2 Ventiladores Silenciosos (~1300 RPM) - Alimentación USB Plug & Play - Altura Ajustable y Antideslizante - Mejora la Ventilación</li>
-        <h1>PRECIO: $12.62</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR VENTILADOR PARA LAPTOP MARVO FN-40 -->
-      <div class="tarjeta">
-        <img id="ventilador11" src="IMAGENES/Imagenes componentes/ventilador2.png" onclick="cambiarImagen('ventilador11', 'ventilador22')">
-        <img id="ventilador22" src="IMAGENES/Imagenes componentes/ventilador22.jpg" onclick="cambiarImagen('ventilador22', 'ventilador11')">
-        <h3 class="titulocompu1">VENTILADOR PARA LAPTOP MARVO FN-40</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>Base Refrigerante RGB (Laptops hasta 17″) - Ventilador 180 mm Silencioso (570–800 RPM) - Hub de 2 puertos USB - Rejilla Metálica con Ajuste de Inclinación - Iluminación RGB</li>
-      <h1>PRECIO: $20.12</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-          <!-- PAR VENTILADOR PARA LAPTOP SPEEDMIND SMCOS01 NEGRO -->
-      <div class="tarjeta agotado">
-        <img id="ventilador111" src="IMAGENES/Imagenes componentes/ventilador3.png" onclick="cambiarImagen('ventilador111', 'ventilador222')">
-        <img id="ventilador222" src="IMAGENES/Imagenes componentes/ventilador33.jpeg" onclick="cambiarImagen('ventilador222', 'ventilador111')">
-        <h3 class="titulocompu1">VENTILADOR PARA LAPTOP SPEEDMIND SMCOS01 NEGRO</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-        <li>Base Refrigerante (Laptops 15.6″ a 17″) - Ventilador 14cm con Luz LED (700–1,400 RPM) - 5 Niveles de Inclinación - Hub 2 Puertos USB 2.0 - Diseño Acrílico Silencioso y Ergonómico</li>
-          <h1>PRECIO: $15.50</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR VENTILADOR PARA LAPTOP COOLERPAD NITRON FAN38 -->
-      <div class="tarjeta agotado">
-        <img id="ventilador1111" src="IMAGENES/Imagenes componentes/ventilador4.png" onclick="cambiarImagen('ventilador1111', 'ventilador2222')">
-        <img id="ventilador2222" src="IMAGENES/Imagenes componentes/ventilador44.webp" onclick="cambiarImagen('ventilador2222', 'ventilador1111')">
-        <h3 class="titulocompu1">VENTILADOR PARA LAPTOP COOLERPAD NITRON FAN38</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-          <li>Base Refrigerante (Laptops 15″ a 17″) - 1 o 2 Ventiladores Silenciosos (600–1,400 RPM) - Alimentación USB 5V Plug & Play - Malla Metálica con Ajuste de Altura e Iluminación LED</li>
-          <h1>PRECIO: $13.50</h1>
-        </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR COOLER BINJU BJ120 ARGB 12 X 12 -->
-      <div class="tarjeta agotado ">
-        <img id="cooler1" src="IMAGENES/Imagenes componentes/cooler1.webp" onclick="cambiarImagen('cooler1', 'cooler2')">
-        <img id="cooler2" src="IMAGENES/Imagenes componentes/cooler11.webp" onclick="cambiarImagen('cooler2', 'cooler1')">
-        <h3 class="titulocompu1">COOLER BINJU BJ120 ARGB 12 X 12</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-       <li>Ventilador de Gabinete ARGB (120 mm) - Velocidad ~1200 RPM (45 CFM) - Silencioso (Hasta 30 dB) - Conexión 12V 3 Pines - Iluminación ARGB Personalizable</li>
-      <h1>PRECIO: $9.27</h1>
-      </ul>
-
-            </details>
-          </form>
-      </div>
-
-      <!-- PAR COOLER DE ENFRIAMIENTO LIQUIDO MSI MAG A15 240 LGA1851 -->
-      <div class="tarjeta agotado">
-        <img id="cooler11" src="IMAGENES/Imagenes componentes/cooler2.png" onclick="cambiarImagen('cooler11', 'cooler22')">
-        <img id="cooler22" src="IMAGENES/Imagenes componentes/cooler22.webp" onclick="cambiarImagen('cooler22', 'cooler11')">
-        <h3 class="titulocompu1">COOLER DE ENFRIAMIENTO LIQUIDO MSI MAG A15 240 LGA1851</h3>
-        <form action="">
-            <details > <!-- (open)para que se mantenga abierto -->
-              <summary>Mas informacion</summary>
-            <ul>
-         <li>Enfriamiento Líquido AIO (Radiador 240mm) - Compatible con Intel LGA 1851/1700 y AMD AM5/AM4 - 2 Ventiladores ARGB 120mm (500–2050 RPM) - Bomba Silenciosa (3400 RPM / ~20 dB) - Diseño con Cableado Oculto</li>
-        <h1>PRECIO: $105.00</h1>
-        </ul>
-
-            </details>
-          </form>
-      </div>
-      </section>
-      </section>
-  </nav>
+        </div>
+    </div>
+</section>
 
   <nav id="Accesorios" class="seccion-oculta">
       <h2>⌚️ Accesorios</h2>
