@@ -234,3 +234,28 @@ function filtrarComponentes(categoriaSeleccionada, botonClicado) {
         }
     });
 }
+
+
+// FUNCIÓN PARA FILTRAR PERIFÉRICOS (Adaptada para ID con tilde)
+function filtrarPerifericos(categoriaSeleccionada, botonClicado) {
+    
+    // 1. GESTIÓN VISUAL: Buscamos dentro del ID con tilde
+    let botones = document.querySelectorAll('#Periféricos .btn-pildora');
+    botones.forEach(boton => boton.classList.remove('activo'));
+    botonClicado.classList.add('activo');
+
+    // 2. FILTRADO DE TARJETAS: Buscamos dentro del ID con tilde
+    let tarjetas = document.querySelectorAll('#Periféricos .tarjeta');
+    
+    tarjetas.forEach(tarjeta => {
+        if (categoriaSeleccionada === 'todas') {
+            tarjeta.style.display = 'block'; 
+        } else {
+            if (tarjeta.classList.contains(categoriaSeleccionada)) {
+                tarjeta.style.display = 'block';
+            } else {
+                tarjeta.style.display = 'none';
+            }
+        }
+    });
+}
