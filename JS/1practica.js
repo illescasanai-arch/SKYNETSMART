@@ -259,3 +259,42 @@ function filtrarPerifericos(categoriaSeleccionada, botonClicado) {
         }
     });
 }
+
+/*// HABILITAR SCROLL HORIZONTAL EN EL MENÚ PRINCIPAL (CON SOPORTE PARA TRACKPAD)
+const carruselPrincipal = document.querySelector('.carrusel');
+
+if (carruselPrincipal) {
+    carruselPrincipal.addEventListener('wheel', function(e) {
+        // DETECCIÓN DE PANEL TÁCTIL (Trackpad)
+        // Si el usuario mueve los dedos hacia los lados, dejamos que la laptop haga su trabajo natural
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            return; 
+        }
+
+        // DETECCIÓN DE MOUSE DE ESCRITORIO
+        // Si el usuario gira la rueda de un mouse normal (movimiento vertical)
+        e.preventDefault(); 
+        
+        // Multiplicamos por 2 para que el giro del mouse sea más ágil y menos cansado
+        carruselPrincipal.scrollLeft += (e.deltaY * 2); 
+    }, { passive: false });
+}*/
+
+// HABILITAR SCROLL HORIZONTAL EN EL MENÚ PRINCIPAL (VELOCIDAD PREMIUM)
+const carruselPrincipal = document.querySelector('.carrusel');
+
+if (carruselPrincipal) {
+    carruselPrincipal.addEventListener('wheel', function(e) {
+        // Respeta el panel táctil de la laptop
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            return; 
+        }
+
+        // Si es la rueda del mouse, detenemos el bajón de página
+        e.preventDefault(); 
+        
+        // Multiplicamos por 0.5 para reducir la velocidad a la mitad. 
+        // Si lo quieres AÚN más lento, pon 0.3 o 0.4.
+        carruselPrincipal.scrollLeft += (e.deltaY * 0.4); 
+    }, { passive: false });
+}

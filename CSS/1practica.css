@@ -105,7 +105,7 @@ body {
   overflow-x: auto; 
   gap: 0px;
   padding: 10px 5px;
-  scroll-behavior: smooth;
+ /* scroll-behavior: smooth;*/
   white-space: nowrap;
   justify-content: flex-start;
   margin-top: 0; 
@@ -113,8 +113,8 @@ body {
   box-sizing: border-box;
   
   /* Oculta la barra en Firefox e IE */
-  scrollbar-width: none !important; 
-  -ms-overflow-style: none !important; 
+  /*scrollbar-width: none !important; 
+  -ms-overflow-style: none !important; */
 }
 
 /* Oculta la barra en Chrome, Edge y Safari (¡OJO! Sin espacios antes de los dos puntos) */
@@ -609,30 +609,11 @@ body > :not(.footer):last-child {
     justify-content: center; /* Esto centra los botones en medio de la pantalla */
 }
 
-/* 2. Corrección para la estructura de 4 columnas de las tarjetas */
-.galeria-componentes {
-    display: grid;
-    /* Esto crea 4 columnas del mismo tamaño. Si quieres 5, cambia el 4 por un 5 */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; /* Espacio entre las tarjetas */
-    width: 100%;
-    max-width: 1200px; /* Evita que se estire demasiado en pantallas gigantes */
-    margin: 0 auto; /* Centra la galería entera */
-}
+/* =======================================================================
+   ESTRUCTURA DE CUADRÍCULA PARA COMPONENTES Y PERIFÉRICOS
+======================================================================= */
 
-/* Regla responsiva para que no se aplaste en celulares y tablets */
-@media (max-width: 900px) {
-    .galeria-componentes {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
-    }
-}
-
-@media (max-width: 600px) {
-    .galeria-componentes {
-        grid-template-columns: 1fr; /* 1 columna en celulares */
-    }
-}
-
+/* 1. REGLA BASE (PARA PC - 4 COLUMNAS) */
 .galeria-componentes, .galeria-perifericos {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -641,3 +622,37 @@ body > :not(.footer):last-child {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* 2. REGLA PARA TABLETS (2 COLUMNAS) */
+@media (max-width: 900px) {
+    .galeria-componentes, .galeria-perifericos {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* 3. REGLA PARA CELULARES (1 COLUMNA + ARREGLO DE "AGOTADO") */
+@media (max-width: 600px) {
+    .galeria-componentes, .galeria-perifericos {
+        grid-template-columns: 1fr; /* Fuerza 1 sola columna elegante */
+        gap: 15px;
+    }
+    
+    /* Achicamos la tarjeta un poco para que respire en el celular */
+    .galeria-componentes .tarjeta, .galeria-perifericos .tarjeta {
+        padding: 15px; 
+    }
+
+    /* EL ARREGLO DEL SELLO "AGOTADO" EXCLUSIVO PARA CELULARES */
+    .galeria-componentes .tarjeta.agotado::after, 
+    .galeria-perifericos .tarjeta.agotado::after {
+        font-size: 0.9rem !important; /* Letra mucho más pequeña */
+        padding: 5px 12px !important; /* Cuadro más pequeño */
+        top: 60px !important; /* Lo subimos para que encaje perfecto sobre la foto pequeña */
+        border: 2px solid white !important; 
+    }
+}
+
+
+
+
+
