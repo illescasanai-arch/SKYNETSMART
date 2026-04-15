@@ -1,0 +1,31 @@
+  backend:
+  name: git-gateway
+  branch: main # Cambia esto a 'respaldo-estatico' si decides trabajar temporalmente en esa rama
+
+media_folder: "IMAGENES" # Aquí es donde el panel guardará las fotos que subas
+public_folder: "IMAGENES"
+
+collections:
+  - name: "computadoras"
+    label: "Computadoras y Mini PCs"
+    folder: "_datos/computadoras" # El sistema creará esta carpeta oculta para guardar los textos
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título del Producto", name: "title", widget: "string"}
+      - {label: "Precio", name: "precio", widget: "string"}
+      - {label: "Imagen", name: "imagen", widget: "image"}
+      - {label: "Descripción (Lista de características)", name: "body", widget: "markdown"}
+      - {label: "Agotado", name: "agotado", widget: "boolean", default: false}
+
+  - name: "proteccion"
+    label: "Protección Eléctrica (UPS)"
+    folder: "_datos/proteccion"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título del Producto", name: "title", widget: "string"}
+      - {label: "Precio", name: "precio", widget: "string"}
+      - {label: "Imagen", name: "imagen", widget: "image"}
+      - {label: "Descripción (Lista de características)", name: "body", widget: "markdown"}
+      - {label: "Agotado", name: "agotado", widget: "boolean", default: false}
