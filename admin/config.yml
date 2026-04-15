@@ -6,26 +6,19 @@ media_folder: "IMAGENES"
 public_folder: "IMAGENES"
 
 collections:
-  - name: "computadoras"
-    label: "Computadoras y Mini PCs"
-    folder: "_datos/computadoras"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Título del Producto", name: "title", widget: "string"}
-      - {label: "Precio", name: "precio", widget: "string"}
-      - {label: "Imagen", name: "imagen", widget: "image"}
-      - {label: "Descripción (Lista de características)", name: "body", widget: "markdown"}
-      - {label: "Agotado", name: "agotado", widget: "boolean", default: false}
-
-  - name: "proteccion"
-    label: "Protección Eléctrica (UPS)"
-    folder: "_datos/proteccion"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Título del Producto", name: "title", widget: "string"}
-      - {label: "Precio", name: "precio", widget: "string"}
-      - {label: "Imagen", name: "imagen", widget: "image"}
-      - {label: "Descripción (Lista de características)", name: "body", widget: "markdown"}
-      - {label: "Agotado", name: "agotado", widget: "boolean", default: false}
+  - name: "catalogo"
+    label: "Catálogo Principal"
+    files:
+      - label: "Computadoras y Mini PCs"
+        name: "computadoras"
+        file: "_datos/computadoras.json"
+        fields:
+          - name: "productos"
+            label: "Lista de Equipos"
+            widget: "list"
+            fields:
+              - {label: "Título del Producto", name: "title", widget: "string"}
+              - {label: "Precio", name: "precio", widget: "string"}
+              - {label: "Imagen", name: "imagen", widget: "image"}
+              - {label: "Descripción", name: "body", widget: "markdown"}
+              - {label: "Agotado", name: "agotado", widget: "boolean", default: false}
