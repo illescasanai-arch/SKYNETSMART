@@ -1,14 +1,14 @@
-  backend:
+backend:
   name: git-gateway
-  branch: main # Cambia esto a 'respaldo-estatico' si decides trabajar temporalmente en esa rama
+  branch: main
 
-media_folder: "IMAGENES" # Aquí es donde el panel guardará las fotos que subas
+media_folder: "IMAGENES"
 public_folder: "IMAGENES"
 
 collections:
   - name: "computadoras"
     label: "Computadoras y Mini PCs"
-    folder: "_datos/computadoras" # El sistema creará esta carpeta oculta para guardar los textos
+    folder: "_datos/computadoras"
     create: true
     slug: "{{slug}}"
     fields:
