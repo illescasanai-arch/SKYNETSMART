@@ -1,0 +1,11 @@
+{
+  "productos": [
+    {
+      "agotado": false,
+      "title": "Mini PC Asus NUC 14 Essential (Intel N150)",
+      "precio": "$235.00",
+      "body": "\nProcesador Intel® N150 (Eficiencia de última generación) - Soporta memoria RAM DDR5-4800 MHz - Salida de video dual para dos monitores (HDMI / DP) - Conectividad ultra rápida: Wi-Fi 6E y Bluetooth 5.3 - (Nota: Diseño compacto que ahorra espacio. No incluye RAM ni almacenamiento, consulta por nuestras opciones de armado).",
+      "imagen": "IMAGENES/nucasus14.jpg"
+    }
+  ]
+}
