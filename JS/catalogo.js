@@ -37,18 +37,22 @@ async function cargarProductos() {
             const producto = doc.data();
             
             // Recreamos TU diseño exacto de tarjeta inyectando los datos
+            // Recreamos TU diseño exacto de tarjeta inyectando todos los datos
             const tarjeta = `
-                <div class="tarjeta celulares">
-                    <h3 class="titulocompu1">${producto.titulo}</h3>
-                    <form action="">
-                        <details> 
-                          <summary>Mas informacion</summary>
-                          <ul>
-                            <li>Producto cargado dinámicamente desde Firebase.</li>
-                          </ul>
-                          <h1>PRECIO: $${producto.precio}</h1>
-                        </details>
-                    </form>
+             <div class="tarjeta celulares">
+             <div class="contenedor-imagen-standard">
+            <img src="${producto.imagen}" alt="${producto.titulo}">
+              </div>
+             <h3 class="titulocompu1">${producto.titulo}</h3>
+             <form action="">
+            <details> 
+              <summary>Mas informacion</summary>
+              <ul>
+                <li>${producto.descripcion}</li>
+              </ul>
+              <h1>PRECIO: $${producto.precio}</h1>
+            </details>
+                 </form>
                 </div>
             `;
             // Añadimos la tarjeta al contenedor

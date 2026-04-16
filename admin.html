@@ -25,8 +25,10 @@
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
     import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    // NUEVO: Herramientas para subir imágenes a la Bodega (Storage)
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-storage.js";
 
-    // OJO: REEMPLAZA ESTO CON EL CÓDIGO QUE COPIASTE DE TU FIREBASE
+    // OJO: REEMPLAZA ESTO CON TUS CREDENCIALES EXACTAS
     const firebaseConfig = {
         apiKey: "AIzaSyDawRJ_UEd60LCwxD3Lk-eZsmMffpjWXlg",
   authDomain: "skynetsmart-a9521.firebaseapp.com",
@@ -37,33 +39,60 @@
   measurementId: "G-WRF55Q2CB5"
     };
 
-    // Encender la conexión
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+    const storage = getStorage(app); // Encendemos la bodega de imágenes
 
     // Programar el botón
     document.getElementById('btnGuardar').addEventListener('click', async () => {
         const inputTitulo = document.getElementById('titulo').value;
         const inputPrecio = document.getElementById('precio').value;
+        const inputDescripcion = document.getElementById('descripcion').value; // Atrapamos descripción
+        const archivoImagen = document.getElementById('imagen').files[0]; // Atrapamos el archivo físico
 
-        if(inputTitulo === "" || inputPrecio === "") {
-            alert("No dejes campos vacíos");
+        // Validación de seguridad
+        if (!inputTitulo || !inputPrecio || !inputDescripcion || !archivoImagen) {
+            alert("Frena ahí. No puedes dejar campos vacíos ni olvidar la foto.");
             return;
         }
 
+        // Cambiamos el texto del botón para que el jefe sepa que está cargando
+        const btn = document.getElementById('btnGuardar');
+        btn.innerText = "Subiendo archivo pesado, espera...";
+        btn.disabled = true;
+
         try {
-            // Mandar los datos a la colección "computadoras"
+            // FASE 1: Enviar foto a Storage
+            const nombreArchivo = Date.now() + "_" + archivoImagen.name; // Evita que dos fotos se llamen igual
+            const imagenRef = ref(storage, 'productos/' + nombreArchivo);
+            await uploadBytes(imagenRef, archivoImagen);
+            
+            // FASE 2: Pedirle a Storage la URL directa de la foto
+            const urlDescarga = await getDownloadURL(imagenRef);
+
+            // FASE 3: Guardar el texto + la URL de la foto en Firestore
             await addDoc(collection(db, "computadoras"), {
                 titulo: inputTitulo,
-                precio: inputPrecio
+                precio: inputPrecio.replace('$', ''), // Quitamos el signo de dólar por si el jefe lo pone
+                descripcion: inputDescripcion,
+                imagen: urlDescarga
             });
-            alert("¡Producto guardado en la nube con éxito!");
-            // Limpiar los cuadros de texto
+
+            alert("¡Producto completo guardado en la nube con éxito!");
+            
+            // Limpiar todo
             document.getElementById('titulo').value = '';
             document.getElementById('precio').value = '';
+            document.getElementById('descripcion').value = '';
+            document.getElementById('imagen').value = '';
+
         } catch (error) {
             console.error("Error al guardar: ", error);
             alert("Hubo un error de conexión.");
+        } finally {
+            // Restaurar el botón
+            btn.innerText = "Subir a la Base de Datos";
+            btn.disabled = false;
         }
     });
 </script>
