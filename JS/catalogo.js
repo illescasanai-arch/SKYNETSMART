@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!contenedor) return;
 
     // 2. Buscamos la información en el "refrigerador" (el archivo JSON)
-    fetch('datos/computadoras.json')
+    fetch('/datos/computadoras.json')
         .then(response => response.json())
         .then(data => {
             const productos = data.productos;

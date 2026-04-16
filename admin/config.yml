@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Computadoras y Mini PCs"
         name: "computadoras"
-        file: " datos/computadoras.json"
+        file: " /datos/computadoras.json"
         fields:
           - name: "productos"
             label: "Lista de Equipos"
