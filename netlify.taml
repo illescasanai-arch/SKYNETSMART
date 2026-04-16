@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+# Esto le dice a Netlify que incluya todos los archivos, 
+# incluidos los JSON de la carpeta datos.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
+  
