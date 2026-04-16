@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración - Skynet</title>
+    <style>
+        body { font-family: Arial; padding: 50px; background-color: #f4f4f4; }
+        .caja { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input, button { width: 100%; margin-bottom: 15px; padding: 10px; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="caja">
+    <h2>Subir Nuevo Producto</h2>
+    <input type="text" id="titulo" placeholder="Nombre del equipo (Ej. Lenovo IdeaPad)">
+    <input type="text" id="precio" placeholder="Precio (Ej. 550)">
+    <button id="btnGuardar">Subir a la Base de Datos</button>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    // OJO: REEMPLAZA ESTO CON EL CÓDIGO QUE COPIASTE DE TU FIREBASE
+    const firebaseConfig = {
+        apiKey: "AIzaSyDawRJ_UEd60LCwxD3Lk-eZsmMffpjWXlg",
+  authDomain: "skynetsmart-a9521.firebaseapp.com",
+  projectId: "skynetsmart-a9521",
+  storageBucket: "skynetsmart-a9521.firebasestorage.app",
+  messagingSenderId: "601143108776",
+  appId: "1:601143108776:web:de56547394c4293e8e0e9d",
+  measurementId: "G-WRF55Q2CB5"
+    };
+
+    // Encender la conexión
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Programar el botón
+    document.getElementById('btnGuardar').addEventListener('click', async () => {
+        const inputTitulo = document.getElementById('titulo').value;
+        const inputPrecio = document.getElementById('precio').value;
+
+        if(inputTitulo === "" || inputPrecio === "") {
+            alert("No dejes campos vacíos");
+            return;
+        }
+
+        try {
+            // Mandar los datos a la colección "computadoras"
+            await addDoc(collection(db, "computadoras"), {
+                titulo: inputTitulo,
+                precio: inputPrecio
+            });
+            alert("¡Producto guardado en la nube con éxito!");
+            // Limpiar los cuadros de texto
+            document.getElementById('titulo').value = '';
+            document.getElementById('precio').value = '';
+        } catch (error) {
+            console.error("Error al guardar: ", error);
+            alert("Hubo un error de conexión.");
+        }
+    });
+</script>
+
+</body>
+</html>

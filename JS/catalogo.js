@@ -17,9 +17,18 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Función para cargar los productos
+// Función para cargar los productos
 async function cargarProductos() {
-    const contenedor = document.getElementById('contenedor-productos'); // Asegúrate que tu HTML tenga este ID
-    contenedor.innerHTML = ""; // Limpiar antes de cargar
+    // CAMBIO CRÍTICO: Ahora buscamos tu clase exacta
+    const contenedor = document.querySelector('.galeriaCelulares'); 
+    
+    if (!contenedor) {
+        console.error("No se encontró la caja .galeriaCelulares en el HTML");
+        return;
+    }
+
+    // Opcional: Limpiar las tarjetas estáticas viejas antes de cargar las nuevas de Firebase
+    // contenedor.innerHTML = ""; 
 
     try {
         const querySnapshot = await getDocs(collection(db, "computadoras"));
@@ -27,14 +36,22 @@ async function cargarProductos() {
         querySnapshot.forEach((doc) => {
             const producto = doc.data();
             
-            // Aquí usamos tu diseño de tarjeta anterior
+            // Recreamos TU diseño exacto de tarjeta inyectando los datos
             const tarjeta = `
-                <div class="producto-card">
-                    <h3>${producto.titulo}</h3>
-                    <p>Precio: $${producto.precio}</p>
-                    <button>Comprar</button>
+                <div class="tarjeta celulares">
+                    <h3 class="titulocompu1">${producto.titulo}</h3>
+                    <form action="">
+                        <details> 
+                          <summary>Mas informacion</summary>
+                          <ul>
+                            <li>Producto cargado dinámicamente desde Firebase.</li>
+                          </ul>
+                          <h1>PRECIO: $${producto.precio}</h1>
+                        </details>
+                    </form>
                 </div>
             `;
+            // Añadimos la tarjeta al contenedor
             contenedor.innerHTML += tarjeta;
         });
     } catch (error) {
