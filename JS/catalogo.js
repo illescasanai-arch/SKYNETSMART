@@ -1,53 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Apuntamos al contenedor donde irán las tarjetas
-    const contenedor = document.querySelector('.galeriaCelulares'); 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-    // Si no encuentra el contenedor, detenemos todo para no causar errores
-    if (!contenedor) return;
+// Tu configuración de Firebase (LA MISMA QUE USAMOS EN ADMIN.HTML)
+const firebaseConfig = {
+  apiKey: "AIzaSyDawRJ_UEd60LCwxD3Lk-eZsmMffpjWXlg",
+  authDomain: "skynetsmart-a9521.firebaseapp.com",
+  projectId: "skynetsmart-a9521",
+  storageBucket: "skynetsmart-a9521.firebasestorage.app",
+  messagingSenderId: "601143108776",
+  appId: "1:601143108776:web:de56547394c4293e8e0e9d",
+  measurementId: "G-WRF55Q2CB5"
+};
 
-    // 2. Buscamos la información en el "refrigerador" (el archivo JSON)
-    fetch('/datos/computadoras.json')
-        .then(response => response.json())
-        .then(data => {
-            const productos = data.productos;
 
-            // Limpiamos el contenedor (borraremos el HTML estático después)
-            contenedor.innerHTML = '';
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-            // 3. Fabricamos las tarjetas usando TU estructura exacta
-            productos.forEach((item, index) => {
-                const tarjeta = document.createElement('div');
-                
-                // Si marcaste "Agotado" en el panel, le añade la clase extra
-                tarjeta.className = item.agotado ? 'tarjeta agotado' : 'tarjeta';
+// Función para cargar los productos
+async function cargarProductos() {
+    const contenedor = document.getElementById('contenedor-productos'); // Asegúrate que tu HTML tenga este ID
+    contenedor.innerHTML = ""; // Limpiar antes de cargar
 
-                // Generamos identificadores únicos para el truco de la imagen (ej: img_0, img_0_2)
-                const idImg1 = `img_${index}`;
-                const idImg2 = `img_${index}_2`;
-
-                // Aquí inyectamos los datos del JSON dentro de tu código HTML
-                tarjeta.innerHTML = `
-                    <div class="contenedor-imagen-standard">
-                        <img id="${idImg1}" src="${item.imagen}" onclick="cambiarImagen('${idImg1}', '${idImg2}')">
-                        <img id="${idImg2}" src="${item.imagen}" onclick="cambiarImagen('${idImg2}', '${idImg1}')" style="display:none;"> 
-                    </div>
-                    <h3 class="titulocompu1">${item.title}</h3>
-                    <form action="">
-                        <details>
-                            <summary>Mas informacion</summary>
-                            <ul>
-                                <li>${item.body}</li>
-                            </ul>
-                            <h1>PRECIO: $${item.precio}</h1>
-                        </details>
-                    </form>
-                `;
-                
-                contenedor.appendChild(tarjeta);
-            });
-        })
-        .catch(error => {
-            console.error('Error cargando el catálogo:', error);
-            contenedor.innerHTML = '<p>Error al cargar el catálogo de computadoras.</p>';
+    try {
+        const querySnapshot = await getDocs(collection(db, "computadoras"));
+        
+        querySnapshot.forEach((doc) => {
+            const producto = doc.data();
+            
+            // Aquí usamos tu diseño de tarjeta anterior
+            const tarjeta = `
+                <div class="producto-card">
+                    <h3>${producto.titulo}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <button>Comprar</button>
+                </div>
+            `;
+            contenedor.innerHTML += tarjeta;
         });
-});
+    } catch (error) {
+        console.error("Error al leer de Firebase: ", error);
+    }
+}
+
+// Arrancar la carga
+cargarProductos();
