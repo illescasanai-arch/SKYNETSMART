@@ -1,10 +1,14 @@
 [build]
   publish = "."
 
-# Esto le dice a Netlify que incluya todos los archivos, 
-# incluidos los JSON de la carpeta datos.
+# Forzamos a que el servidor entregue los JSON
+[[headers]]
+  for = "/datos/*"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
-  
+  status = 200
